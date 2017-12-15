@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./template.component.scss']
 })
 export class TemplateComponent implements OnInit {
+    title = 'app';
 
     constructor() { }
 

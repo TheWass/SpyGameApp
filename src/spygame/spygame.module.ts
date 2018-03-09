@@ -4,9 +4,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 import { PubNubAngular } from 'pubnub-angular2';
 
-import { AppRoutingModule } from './app.routing.module';
+import { SpyGameRoutingModule } from './spygame.routing.module';
 
-import { AppComponent } from './app.component';
+import { SpyGameComponent } from './spygame.component';
 import { NotFoundComponent } from './pages/notfound/notfound.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { TemplateComponent } from './pages/template/template.component';
@@ -18,16 +18,16 @@ import { RegisterService } from './providers/register/register.service';
     imports: [
         BrowserModule,
         HttpClientModule,
-        AppRoutingModule
+        SpyGameRoutingModule
     ],
     declarations: [
-        AppComponent,
+        SpyGameComponent,
         NotFoundComponent,
         RegisterComponent,
         TemplateComponent
     ],
     bootstrap: [
-        AppComponent
+        SpyGameComponent
     ],
     providers: [
         PubNubAngular,
@@ -35,4 +35,4 @@ import { RegisterService } from './providers/register/register.service';
         RegisterService
     ]
 })
-export class AppModule { }
+export class SpyGameModule { }

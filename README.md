@@ -1,6 +1,11 @@
 # SpyGameApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.1.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli).
+
+## To setup the development environment:  
+
+    npm install -g @angular/cli
+    npm install
 
 ## Development server
 

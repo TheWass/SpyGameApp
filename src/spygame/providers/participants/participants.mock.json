@@ -1,0 +1,6 @@
+[    
+    { "name": "Player1", "ready": false },
+    { "name": "Player2", "ready": false },
+    { "name": "Player3", "ready": true },
+    { "name": "Player4", "ready": false }
+]

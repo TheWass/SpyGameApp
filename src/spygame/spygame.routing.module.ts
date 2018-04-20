@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { RegisterComponent } from './pages/register/register.component';
-import { TemplateComponent } from './pages/template/template.component';
-import { NotFoundComponent } from './pages/notfound/notfound.component';
+import { RegisterPage } from './pages/register/register.page';
+import { TemplatePage } from './pages/template/template.page';
+import { NotFoundPage } from './pages/notfound/notfound.page';
 
 const spyRoutes: Routes = [
     { path: '', redirectTo: 'register', pathMatch: 'full' },
-    { path: 'register', component: RegisterComponent },
-    { path: 'template', component: TemplateComponent },
-    { path: '**', component: NotFoundComponent }
+    { path: 'register', component: RegisterPage },
+    { path: 'template', component: TemplatePage },
+    { path: '**', component: NotFoundPage }
   ];
 
 @NgModule({

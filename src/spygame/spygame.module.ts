@@ -6,10 +6,10 @@ import { PubNubAngular } from 'pubnub-angular2';
 
 import { SpyGameRoutingModule } from './spygame.routing.module';
 
-import { SpyGameComponent } from './spygame.component';
-import { NotFoundComponent } from './pages/notfound/notfound.component';
-import { RegisterComponent } from './pages/register/register.component';
-import { TemplateComponent } from './pages/template/template.component';
+import { SpyGameApp } from './spygame.app';
+import { NotFoundPage } from './pages/notfound/notfound.page';
+import { RegisterPage } from './pages/register/register.page';
+import { TemplatePage } from './pages/template/template.page';
 
 import { PubNubService } from './providers/pubnub/pubnub.service';
 import { RegisterService } from './providers/register/register.service';
@@ -21,13 +21,13 @@ import { RegisterService } from './providers/register/register.service';
         SpyGameRoutingModule
     ],
     declarations: [
-        SpyGameComponent,
-        NotFoundComponent,
-        RegisterComponent,
-        TemplateComponent
+        SpyGameApp,
+        NotFoundPage,
+        RegisterPage,
+        TemplatePage
     ],
     bootstrap: [
-        SpyGameComponent
+        SpyGameApp
     ],
     providers: [
         PubNubAngular,

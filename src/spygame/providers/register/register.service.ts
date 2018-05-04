@@ -1,13 +1,13 @@
 import { Http, Response, Request } from '@angular/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/Rx';
+import { Observable, empty } from 'rxjs';
 
 @Injectable()
 export class RegisterService {
     constructor() { }
 
     registerPlayer(playerName: string, gameCode: string): Observable<any> {
-        return Observable.empty();
+        return empty();
     }
 
     registerGame(playerName: string): Observable<any> {

@@ -1,6 +1,7 @@
-import { TestBed, inject } from '@angular/core/testing';
+import { TestBed, inject, async } from '@angular/core/testing';
+import { Observable } from 'rxjs';
 
-import { ParticipantsService } from './participants.service';
+import { ParticipantsService, Participant } from './participants.service';
 
 describe('ParticipantsService', () => {
     beforeEach(() => {
@@ -13,5 +14,9 @@ describe('ParticipantsService', () => {
         expect(service).toBeTruthy();
     }));
 
-    it('should ask api for participants')
+    it('should fetch participants', async(inject([ParticipantsService], (service: ParticipantsService) => {
+        service.fetch().subscribe((result: Participant[]) => {
+            expect(result.length).toBeGreaterThan(0);
+        });
+    })));
 });

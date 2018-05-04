@@ -16,5 +16,6 @@ describe('PubNubService', () => {
 
     it('should get the API keys from the C# server.', inject([PubNubService], (service: PubNubService) => {
         service.getApiKeys();
+        pending();
     }));
 });

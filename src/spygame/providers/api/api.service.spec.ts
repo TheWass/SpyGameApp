@@ -15,14 +15,18 @@ describe('ApiService', () => {
     }));
 
     it('should make a GET call', inject([ApiService], (service: ApiService) => {
+        pending();
     }));
 
     it('should make a GET call with authentication', inject([ApiService], (service: ApiService) => {
+        pending();
     }));
 
     it('should make a POST call', inject([ApiService], (service: ApiService) => {
+        pending();
     }));
 
     it('should make a POST call with authentication', inject([ApiService], (service: ApiService) => {
+        pending();
     }));
 });

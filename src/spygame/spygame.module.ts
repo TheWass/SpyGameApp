@@ -10,6 +10,7 @@ import { SpyGameApp } from './spygame.app';
 import { NotFoundPage } from './pages/notfound/notfound.page';
 import { RegisterPage } from './pages/register/register.page';
 import { TemplatePage } from './pages/template/template.page';
+import { LobbyPage } from './pages/lobby/lobby.page';
 
 import { PubNubService } from './providers/pubnub/pubnub.service';
 import { RegisterService } from './providers/register/register.service';
@@ -24,7 +25,8 @@ import { RegisterService } from './providers/register/register.service';
         SpyGameApp,
         NotFoundPage,
         RegisterPage,
-        TemplatePage
+        TemplatePage,
+        LobbyPage
     ],
     bootstrap: [
         SpyGameApp

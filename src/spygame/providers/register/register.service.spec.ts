@@ -15,17 +15,21 @@ describe('RegisterService', () => {
 
     it('should register a new user', inject([RegisterService], (service: RegisterService) => {
         // Register a user
+        pending();
     }));
 
     it('should login a user', inject([RegisterService], (service: RegisterService) => {
         // login a user
+        pending();
     }));
 
     it('should logout a user', inject([RegisterService], (service: RegisterService) => {
         // logout a user
+        pending();
     }));
 
     it('should reset a user password', inject([RegisterService], (service: RegisterService) => {
         // Register a user
+        pending();
     }));
 });

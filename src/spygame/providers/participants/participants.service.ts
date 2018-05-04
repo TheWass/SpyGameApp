@@ -18,6 +18,6 @@ export class ParticipantsService {
     constructor() { }
 
     fetch(): Observable<Participant[]> {
-        return Observable.of(this.partMock);
+        return of(this.partMock);
     }
 }

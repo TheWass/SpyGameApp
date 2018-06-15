@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, empty } from 'rxjs';
 
 @Injectable()
-export class RegisterService {
+export class GameService {
     constructor() { }
 
     registerPlayer(playerName: string, gameCode: string): Observable<any> {

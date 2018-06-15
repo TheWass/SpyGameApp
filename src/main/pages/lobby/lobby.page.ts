@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { interval } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
-import { ParticipantsService, Participant } from '../../providers/participants/participants.service';
+import { ParticipantsService, Participant } from '../../providers/model/participants.service';
 import { BasePage } from '../base.page';
 
 @Component({

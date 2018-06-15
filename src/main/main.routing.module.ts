@@ -6,7 +6,7 @@ import { TemplatePage } from './pages/template/template.page';
 import { NotFoundPage } from './pages/notfound/notfound.page';
 import { LobbyPage } from './pages/lobby/lobby.page';
 
-const spyRoutes: Routes = [
+const routes: Routes = [
     { path: '', redirectTo: 'register', pathMatch: 'full' },
     { path: 'register', component: RegisterPage },
     { path: 'template', component: TemplatePage },
@@ -16,7 +16,7 @@ const spyRoutes: Routes = [
 
 @NgModule({
     imports: [
-        RouterModule.forRoot(spyRoutes)
+        RouterModule.forRoot(routes)
     ],
     exports: [
         RouterModule
@@ -24,4 +24,4 @@ const spyRoutes: Routes = [
     providers: [
     ]
 })
-export class SpyGameRoutingModule { }
+export class MainRoutingModule { }

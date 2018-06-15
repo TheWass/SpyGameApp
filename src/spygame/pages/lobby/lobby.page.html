@@ -2,3 +2,4 @@ Lobby
 <div *ngFor="let player of players">
     {{player.username}} is <span *ngIf="!player.ready">not</span> ready.
 </div>
+<div *ngIf="allPlayersAreReady">Everybody is ready!  Start game?</div>

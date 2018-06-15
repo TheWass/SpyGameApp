@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-import { RouterModule, Routes } from '@angular/router';
 import { PubNubAngular } from 'pubnub-angular2';
 
 import { SpyGameRoutingModule } from './spygame.routing.module';
@@ -14,6 +13,7 @@ import { LobbyPage } from './pages/lobby/lobby.page';
 
 import { PubNubService } from './providers/pubnub/pubnub.service';
 import { RegisterService } from './providers/register/register.service';
+import { ParticipantsService } from './providers/participants/participants.service';
 
 @NgModule({
     imports: [
@@ -34,7 +34,8 @@ import { RegisterService } from './providers/register/register.service';
     providers: [
         PubNubAngular,
         PubNubService,
-        RegisterService
+        RegisterService,
+        ParticipantsService
     ]
 })
 export class SpyGameModule { }

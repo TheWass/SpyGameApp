@@ -15,7 +15,19 @@ describe('ParticipantsService', () => {
     }));
 
     it('should fetch participants', async(inject([ParticipantsService], (service: ParticipantsService) => {
-        service.fetch().subscribe((result: Participant[]) => {
+        service.watch().subscribe((result: Participant[]) => {
+            expect(result.length).toBeGreaterThan(0);
+        });
+    })));
+
+    it('should add a participant', async(inject([ParticipantsService], (service: ParticipantsService) => {
+        service.watch().subscribe((result: Participant[]) => {
+            expect(result.length).toBeGreaterThan(0);
+        });
+    })));
+
+    it('should remove a participant', async(inject([ParticipantsService], (service: ParticipantsService) => {
+        service.watch().subscribe((result: Participant[]) => {
             expect(result.length).toBeGreaterThan(0);
         });
     })));

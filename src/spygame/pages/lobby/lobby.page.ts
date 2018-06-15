@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { interval } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
 import { ParticipantsService, Participant } from '../../providers/participants/participants.service';
@@ -13,14 +14,17 @@ export class LobbyPage extends BasePage {
     
     players: Participant[];
 
+    get allPlayersAreReady() {
+        return this.players.length > 0 && this.players.every(p => p.ready);
+    }
+
     constructor(private partService: ParticipantsService) { super(); }
 
     ngOnInit() {
-        this.partService.fetch().pipe(
+        this.partService.watch().pipe(
             takeUntil(this.unsub)
         ).subscribe((participants: Participant[]) => {
             this.players = participants;
         });
     }
-
 }

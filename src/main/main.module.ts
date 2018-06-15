@@ -10,7 +10,7 @@ import { RegisterPage } from './pages/register/register.page';
 import { TemplatePage } from './pages/template/template.page';
 import { LobbyPage } from './pages/lobby/lobby.page';
 
-import { GameService } from './providers/model/game.service';
+import { GameService, Game } from './providers/model/game.service';
 import { ParticipantsService } from './providers/model/participants.service';
 
 @NgModule({
@@ -32,6 +32,8 @@ import { ParticipantsService } from './providers/model/participants.service';
     providers: [
         GameService,
         ParticipantsService
+    ],
+    exports: [
     ]
 })
-export class SpyGameModule { }
+export class MainModule { }

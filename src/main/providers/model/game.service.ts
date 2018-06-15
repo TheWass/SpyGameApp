@@ -2,8 +2,14 @@ import { Injectable } from '@angular/core';
 import { PlayerService } from './player.service';
 import { Observable, of } from 'rxjs';
 
-export interface Game {
+enum GameType {
+    Spy, ONUW
+}
+
+export abstract class Game {
     code: string;
+    static type: GameType;
+    abstract start(): void;
 }
 
 @Injectable()
@@ -13,7 +19,15 @@ export class GameService {
 
     //Maybe not implement this for security reasons.
     getJoinableGames(): Observable<Game[]> {
-        let moq = [{ code: "R001" }, { code: "R002" }, { code: "ONU005" }];
+        let moq = [{ 
+            code: "FSUC", 
+            type: GameType.Spy, 
+            start: () => {} 
+        }, { 
+            code: "YHFR", 
+            type: GameType.ONUW, 
+            start: () => {} 
+        }];
         return of(moq);
     }
 

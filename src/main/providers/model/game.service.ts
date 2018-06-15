@@ -1,20 +1,41 @@
-import { Http, Response, Request } from '@angular/http';
 import { Injectable } from '@angular/core';
-import { Observable, empty } from 'rxjs';
+import { PlayerService } from './player.service';
+import { Observable, of } from 'rxjs';
+
+export interface Game {
+    code: string;
+}
 
 @Injectable()
 export class GameService {
-    constructor() { }
 
-    registerPlayer(playerName: string, gameCode: string): Observable<any> {
-        return empty();
+    constructor(public player: PlayerService) { }
+
+    //Maybe not implement this for security reasons.
+    getJoinableGames(): Observable<Game[]> {
+        let moq = [{ code: "R001" }, { code: "R002" }, { code: "ONU005" }];
+        return of(moq);
     }
 
-    registerGame(playerName: string): Observable<any> {
-        return;
+    create() {
+        //Call server to get new game code and join game
     }
 
-    disconnect(): Observable<any> {
-        return;
+    join(gameCode: string){
+        //call server to join gameCode
+        this.player.joinGame(gameCode);
+    }
+
+    leave() {
+        //Call server to leave gameCode
+        this.player.leaveGame();
+    }
+    
+    start() {
+        //Call server to start game
+    }
+
+    end() {
+        //Call server to end game
     }
 }

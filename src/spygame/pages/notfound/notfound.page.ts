@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
+import { BasePage } from '../base.page';
 
 @Component({
     selector: 'notfound-page',
     templateUrl: './notfound.page.html',
     styleUrls: ['./notfound.page.scss']
 })
-export class NotFoundPage implements OnInit {
+export class NotFoundPage extends BasePage {
 
-    constructor() { }
+    constructor() { super(); }
 
     ngOnInit() {
     }

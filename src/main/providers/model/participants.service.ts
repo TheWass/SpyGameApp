@@ -8,7 +8,7 @@ export interface Participant {
 
 @Injectable()
 export class ParticipantsService {
-    private participants: BehaviorSubject<Participant[]> = new BehaviorSubject([]);
+    private participants: BehaviorSubject<Participant[]> = new BehaviorSubject(<Participant[]>[])
 
     watch(): Observable<Participant[]> {
         return this.participants.asObservable();
@@ -18,7 +18,7 @@ export class ParticipantsService {
         this.participants.next(participants);
     }
 
-    snapshot(): Participant[] {
+    snapshot(): Participant[] | null {
         return this.participants.getValue();
     }
 }

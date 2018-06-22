@@ -3,9 +3,9 @@ import { Participant } from './participants.service';
 
 @Injectable()
 export class PlayerService implements Participant {
-    private _gameCode: string;
-    private _username: string;
-    private _ready: boolean;
+    private _gameCode?: string;
+    private _username: string = "";
+    private _ready: boolean = false;
 
     get username(): string {
         return this._username;
@@ -15,7 +15,7 @@ export class PlayerService implements Participant {
         return this._ready;
     }
 
-    get gameCode(): string {
+    get gameCode(): string | undefined {
         return this._gameCode;
     }
 
@@ -29,11 +29,11 @@ export class PlayerService implements Participant {
     }
 
     leaveGame() {
-        this._gameCode = null;
+        this._gameCode = "";
     }
 
     readyUp() {
-        this._ready = true;
+        if (this._gameCode) this._ready = true;
     }
 
     unReady() {

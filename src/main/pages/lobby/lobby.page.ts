@@ -12,7 +12,7 @@ import { BasePage } from '../base.page';
 })
 export class LobbyPage extends BasePage {
     
-    players: Participant[];
+    players: Participant[] = [];
 
     get allPlayersAreReady() {
         return this.players.length > 0 && this.players.every(p => p.ready);

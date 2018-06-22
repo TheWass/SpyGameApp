@@ -3,11 +3,11 @@ import { PlayerService } from './player.service';
 import { Observable, of } from 'rxjs';
 
 enum GameType {
-    Spy, ONUW
+    SpyGame, ONUW
 }
 
 export abstract class Game {
-    code: string;
+    code: string = "";
     static type: GameType;
     abstract start(): void;
 }
@@ -15,13 +15,15 @@ export abstract class Game {
 @Injectable()
 export class GameService {
 
+    
+
     constructor(public player: PlayerService) { }
 
     //Maybe not implement this for security reasons.
     getJoinableGames(): Observable<Game[]> {
         let moq = [{ 
             code: "FSUC", 
-            type: GameType.Spy, 
+            type: GameType.SpyGame, 
             start: () => {} 
         }, { 
             code: "YHFR", 

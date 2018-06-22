@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { PlayerService } from './player.service';
 import { Observable, of } from 'rxjs';
+import { PlayerService } from './player.service';
 
 enum GameType {
     SpyGame, ONUW
@@ -14,9 +14,6 @@ export abstract class Game {
 
 @Injectable()
 export class GameService {
-
-    
-
     constructor(public player: PlayerService) { }
 
     //Maybe not implement this for security reasons.
@@ -35,16 +32,6 @@ export class GameService {
 
     create() {
         //Call server to get new game code and join game
-    }
-
-    join(gameCode: string){
-        //call server to join gameCode
-        this.player.joinGame(gameCode);
-    }
-
-    leave() {
-        //Call server to leave gameCode
-        this.player.leaveGame();
     }
     
     start() {

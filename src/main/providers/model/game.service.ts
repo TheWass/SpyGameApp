@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { PlayerService } from './player.service';
+import { tap } from 'rxjs/operators';
 
-enum GameType {
+export enum GameType {
     SpyGame, ONUW
 }
 
@@ -14,31 +14,26 @@ export abstract class Game {
 
 @Injectable()
 export class GameService {
-    constructor(public player: PlayerService) { }
+    constructor() { }
 
-    //Maybe not implement this for security reasons.
-    getJoinableGames(): Observable<Game[]> {
-        let moq = [{ 
-            code: "FSUC", 
-            type: GameType.SpyGame, 
-            start: () => {} 
-        }, { 
-            code: "YHFR", 
-            type: GameType.ONUW, 
-            start: () => {} 
-        }];
-        return of(moq);
-    }
-
-    create() {
+    create(type: GameType): Observable<string> {
         //Call server to get new game code and join game
+        return of("QWER").pipe(
+            tap((gameCode: string) => {
+                
+            })
+        );
     }
     
     start() {
         //Call server to start game
     }
 
-    end() {
-        //Call server to end game
+    joinGame(username: string, gameCode: string): Observable<void> {
+        return of(undefined);
+    }
+
+    leaveGame() {
+
     }
 }

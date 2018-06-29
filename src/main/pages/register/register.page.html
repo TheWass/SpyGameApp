@@ -2,6 +2,10 @@
 You've found the register page!
 </div>
 
-<form name="register">
-    <input type="text" name="username" />
+<form [formGroup]="register" (ngSubmit)="onRegister()">
+    <input type="text" formControlName="username" />
+    <input type="text" formControlName="gameCode" />
+    <button type="submit">Join Game</button>
 </form>
+
+<pre>{{register.value | json}}</pre>

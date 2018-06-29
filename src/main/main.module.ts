@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { MainRoutingModule } from './main.routing.module';
 
@@ -17,7 +18,8 @@ import { ParticipantsService } from './providers/model/participants.service';
     imports: [
         BrowserModule,
         HttpClientModule,
-        MainRoutingModule
+        MainRoutingModule,
+        ReactiveFormsModule
     ],
     declarations: [
         MainApp,

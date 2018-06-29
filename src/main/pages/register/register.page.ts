@@ -1,5 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { FormControl, FormGroup } from '@angular/forms';
+
 import { BasePage } from '../base.page';
+import { GameService } from '../../providers/model/game.service';
 
 @Component({
     selector: 'register-page',
@@ -8,9 +12,18 @@ import { BasePage } from '../base.page';
 })
 export class RegisterPage extends BasePage {
 
-    constructor() { super(); }
+    register = new FormGroup({
+        username: new FormControl(),
+        gameCode: new FormControl()
+    });
 
-    ngOnInit() {
+    constructor(public router: Router, public gameService: GameService) { super(); }
+
+    onRegister() {
+        let username = this.register.value.username as string;
+        let gameCode = this.register.value.gameCode as string;
+        this.gameService.joinGame(username, gameCode).subscribe(() => {
+            this.router.navigate(['lobby']);
+        });
     }
-
 }

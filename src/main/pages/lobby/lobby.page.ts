@@ -10,8 +10,7 @@ import { BasePage } from '../base.page';
     templateUrl: './lobby.page.html',
     styleUrls: ['./lobby.page.scss']
 })
-export class LobbyPage extends BasePage {
-    
+export class LobbyPage extends BasePage implements OnInit {
     players: Participant[] = [];
 
     get allPlayersAreReady() {

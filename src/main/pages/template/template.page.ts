@@ -6,7 +6,7 @@ import { BasePage } from '../base.page';
     templateUrl: './template.page.html',
     styleUrls: ['./template.page.scss']
 })
-export class TemplatePage extends BasePage {
+export class TemplatePage extends BasePage implements OnInit {
     title = 'app';
 
     constructor() { super(); }

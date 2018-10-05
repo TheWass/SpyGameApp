@@ -7,8 +7,8 @@ export enum GameType {
 }
 
 export abstract class Game {
-    code: string = "";
     static type: GameType;
+    code = '';
     abstract start(): void;
 }
 
@@ -17,16 +17,15 @@ export class GameService {
     constructor() { }
 
     create(type: GameType): Observable<string> {
-        //Call server to get new game code and join game
-        return of("QWER").pipe(
+        // Call server to get new game code and join game
+        return of('QWER').pipe(
             tap((gameCode: string) => {
-                
             })
         );
     }
-    
+
     start() {
-        //Call server to start game
+        // Call server to start game
     }
 
     joinGame(username: string, gameCode: string): Observable<void> {

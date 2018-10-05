@@ -20,8 +20,8 @@ export class RegisterPage extends BasePage {
     constructor(public router: Router, public gameService: GameService) { super(); }
 
     onRegister() {
-        let username = this.register.value.username as string;
-        let gameCode = this.register.value.gameCode as string;
+        const username = this.register.value.username as string;
+        const gameCode = this.register.value.gameCode as string;
         this.gameService.joinGame(username, gameCode).subscribe(() => {
             this.router.navigate(['lobby']);
         });

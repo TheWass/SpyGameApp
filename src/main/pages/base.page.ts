@@ -1,6 +1,6 @@
 import { Subject } from 'rxjs';
 
-export class BasePage {
+export class BasePage implements OnDestroy {
     protected unsub: Subject<void> = new Subject();
 
     ngOnDestroy() {

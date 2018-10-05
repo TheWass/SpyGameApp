@@ -5,5 +5,5 @@ import { Component } from '@angular/core';
     templateUrl: './spygame.app.html'
 })
 export class SpyGameApp {
-    
+
 }

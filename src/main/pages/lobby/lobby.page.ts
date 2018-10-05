@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { interval } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
-import { ParticipantsService, Participant } from '../../providers/model/participants.service';
+import { ParticipantsModel, Participant } from '../../models/participants.model';
 import { BasePage } from '../base.page';
 
 @Component({
@@ -17,10 +17,10 @@ export class LobbyPage extends BasePage implements OnInit {
         return this.players.length > 0 && this.players.every(p => p.ready);
     }
 
-    constructor(private partService: ParticipantsService) { super(); }
+    constructor(private participantsModel: ParticipantsModel) { super(); }
 
     ngOnInit() {
-        this.partService.watch().pipe(
+        this.participantsModel.watch().pipe(
             takeUntil(this.unsub)
         ).subscribe((participants: Participant[]) => {
             this.players = participants;

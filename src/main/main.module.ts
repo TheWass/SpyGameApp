@@ -11,8 +11,8 @@ import { RegisterPage } from './pages/register/register.page';
 import { TemplatePage } from './pages/template/template.page';
 import { LobbyPage } from './pages/lobby/lobby.page';
 
-import { GameService, Game } from './providers/model/game.service';
-import { ParticipantsService } from './providers/model/participants.service';
+import { GameService } from './providers/controllers/game.service';
+import { ParticipantsModel } from './models/participants.model';
 
 @NgModule({
     imports: [
@@ -33,7 +33,7 @@ import { ParticipantsService } from './providers/model/participants.service';
     ],
     providers: [
         GameService,
-        ParticipantsService
+        ParticipantsModel
     ],
     exports: [
     ]

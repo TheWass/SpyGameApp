@@ -7,7 +7,7 @@ export interface Participant {
 }
 
 @Injectable()
-export class ParticipantsService {
+export class ParticipantsModel {
     private participants: BehaviorSubject<Participant[]> = new BehaviorSubject(<Participant[]>[]);
 
     watch(): Observable<Participant[]> {
@@ -18,7 +18,17 @@ export class ParticipantsService {
         this.participants.next(participants);
     }
 
-    snapshot(): Participant[] | null {
-        return this.participants.getValue();
+    private snapshot(): Participant[] {
+        return this.participants.getValue() || <Participant[]>[];
+    }
+
+    add(username: string) {
+        const participantList = this.snapshot();
+        participantList.push({username: username, ready: false});
+        this.synchronize(participantList);
+    }
+
+    remove(username: string) {
+        this.synchronize(this.snapshot().filter((e: Participant) => e.username !== username));
     }
 }
